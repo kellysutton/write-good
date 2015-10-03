@@ -58,11 +58,7 @@ files.forEach(function (file) {
   var suggestions = writeGood(contents, opts);
 
   exitCode += suggestions.length;
-  if (suggestions.length) {
-    console.log('In ' + file);
-    console.log('=============');
-    console.log(annotate(contents, suggestions).join('\n-------------\n'));
-  }
+  console.log(JSON.stringify({ "suggestions": suggestions }));
 });
 
 process.exit(exitCode);
